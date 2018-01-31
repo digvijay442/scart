@@ -42,10 +42,7 @@ router.get('/logout',function(req, res){
   res.redirect('/');
 })
 
-router.get('/dashboard', isLoggedIn, function(req, res){
-  res.render('dashboard')
-  // res.send('welcome to dashboard....<a href="/logout">Logout</a>');
-})
+
 
 module.exports = router;
 

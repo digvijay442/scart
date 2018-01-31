@@ -1,7 +1,7 @@
 body {
-  padding: 50px;
+  /* padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background: #eee !important;	
+	background: #eee !important;	 */
   
 }
 
@@ -59,4 +59,33 @@ a {
 
 .cartBtn {
 	margin-top: 9px;
+}
+
+
+.itmesContainer {
+	/* border: solid black 1px; */
+	align-items: center;
+}
+
+.itmesContainer > div{
+	margin-bottom: 10px;
+}
+
+.itmesContainer .col-sm-4 > div {
+	border: solid black 1px;
+	margin : 1px;
+ padding: 11px;
+}
+
+.cartVal {
+	font-weight: bold;
+}
+
+.afterCheckout{
+	display: none;
+}
+
+span.msg{
+	display: none;
+	color: red;
 }

@@ -1,4 +1,40 @@
 <% include partials/header %>
 <% include partials/navbar %>
 
+<div class='container'>
+    <div class="row itmesContainer">
+     <!-- <button class="btnTest">test</button> <br> -->
+                <% if(rows.length > 0) { %>
+                <%   rows.forEach(function(data, index) { %>
+                        <div class='col-sm-4'>
+                            <div class='proDetails'>
+                                <p class='productId'><%= data.id %></p>
+                                <p class='prodName'><b> <%= data.product_name %> </b></p>
+                                <p class='cost'><%= data.cost %></p>
+                                <p class='avlStock'><%= data.available_quantity %></p>
+                                <button class='btn btn-primary addIteminCartBtn'> Add </button>
+                            </div>
+                        </div>
+                <%  })%>
+                </div>
+                <% } %>
+
+    <button type="button" class="btn btn-dafault btn-md cartBtn">
+            CheckOut
+    </button> <span class='msg'>msg</span> <br><br>
+
+    <div class='afterCheckout'>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td> Name </td>
+                    <td> Quantity </td>
+                    <td> Amount </td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
 <% include partials/footer %>
