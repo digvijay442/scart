@@ -40,7 +40,6 @@ $(document).ready(function(){
         console.log('_________orderDetails array');
         console.log(orderDetails);
 
-
         $.ajax({
             url: '/dashboard/addCart',
             method : 'GET',
@@ -69,8 +68,10 @@ $(document).ready(function(){
                         $('span.msg').hide();
                     },3000)
                 } else {
-                        console.log('response else')
-                        $('div.afterCheckout').show();
+                        console.log('response else');
+                        if(typeof response.redirect == 'string')
+                            window.location = response.redirect;
+                      /*  $('div.afterCheckout').show();
                         var tbodyEl = $('table tbody');
                         tbodyEl.html('');
                         var totalPay=0;
@@ -90,7 +91,7 @@ $(document).ready(function(){
                             <td colspan=2><strong>Total</strong></td>
                             <td><strong>`+ totalPay +`</strong></td>
                         </tr>
-                        `);
+                        `); */
                 } // else ends here
             }  // success block ends here
         })

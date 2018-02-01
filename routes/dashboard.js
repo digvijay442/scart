@@ -61,7 +61,8 @@ router.post('/checkout', isLoggedIn, function(req, res){
             console.log('___________at checkout page________');
             console.log(rows);
             orderDetailsFinal = rows;
-            res.send(rows); 
+            // res.send(rows);
+            res.send({redirect: '/dashboard/checkout'}) 
             // res.render('checkOutPage',{orderDetails : rows})
         }
         else {
@@ -70,12 +71,11 @@ router.post('/checkout', isLoggedIn, function(req, res){
     })
 });
 
-// router.get('/checkout', function(req, res){
-//     console.log('this is check out get route... orderDetails op below');
-//     // console.log(orderDetails);
-//     res.send('checkout get route')
-//     // res.render('checkOutPage', {orderDetails: orderDetailsFinal});
-// })
+router.get('/checkout', isLoggedIn, function(req, res){
+    console.log('this is check out get route... orderDetails op below');
+    console.log(orderDetailsFinal);
+    res.render('checkOutPage', {orderDetails: orderDetailsFinal});
+})
 
 module.exports = router;
 
